@@ -1,18 +1,35 @@
-﻿namespace Example
+﻿namespace SortingApp
 {
-    public static class Program
+    public static class Cocktail
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            List<int> list = new List<int> { 6, 1, 3, 7, 2, 7, 9, 8 };
-            CocktailSort<int>(list);
-            foreach(var item in list)
+            if(args.Length == 0)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Input some numbers separated by whitespace character");
+                return;
+            }
+
+            List<double> input = new List<double>(args.Length);
+            try
+            {
+                foreach (string s in args)
+                {
+                    input.Add(double.Parse(s));
+                }
+            } catch 
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+            Sort(input);
+            foreach(double d in input)
+            {
+                Console.Write(d.ToString() + ' ');
             }
         }
 
-        public static List<T> CocktailSort<T>(List<T> list) where T : IComparable
+        public static List<T> Sort<T>(List<T> list) where T : IComparable
         {
             T var_buff;
             int index_buff = 0;
