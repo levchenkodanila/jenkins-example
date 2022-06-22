@@ -23,10 +23,12 @@
             }
 
             Sort(input);
+            Console.Write("CocktailSort: ");
             foreach(double d in input)
             {
                 Console.Write(d.ToString() + ' ');
             }
+            Console.WriteLine();
         }
 
         public static List<T> Sort<T>(List<T> list) where T : IComparable
