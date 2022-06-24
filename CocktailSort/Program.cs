@@ -36,8 +36,8 @@
             T var_buff;
             int index_buff = 0;
             int left = 0;
-            // int right = list.Count - 1;
-            int right = list.Count - 2;
+            int right = list.Count - 1;
+            // int right = list.Count - 2;
             while (left < right)
             {
                 for (int i = left; i < right; i++)
